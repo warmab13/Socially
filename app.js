@@ -6,7 +6,11 @@ if (Meteor.isClient) {
     $scope.parties = $meteor.collection(Parties);
           
     $scope.remove= function(party){
-        $scope.parties.splice($scope.parties.indexOf(party),1);
+        $scope.parties.remove(party);
+    };
+
+    $scope.removeAll = function(){
+        $scope.parties.remove();
     };
   }]);
 }
